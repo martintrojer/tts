@@ -1,4 +1,7 @@
 #!/Users/martintrojer/hacking/tts/venv/bin/python
+
+# kokoro>=0.3.4 soundfile
+
 import subprocess
 import sys
 from tempfile import NamedTemporaryFile
@@ -8,10 +11,10 @@ import soundfile as sf
 from kokoro import KPipeline
 
 
-def generate_audio(text: str, voice="af_heart", speed=1):
+def generate_audio(text: str, voice="af_heart", speed=1.25):
     # 🇺🇸 'a' => American English, 🇬🇧 'b' => British English
     pipeline = KPipeline(
-        lang_code="b", device="mps"
+        lang_code="a", device="mps"
     )  # <= make sure lang_code matches voice
 
     generator = pipeline(text, voice=voice, speed=speed)
