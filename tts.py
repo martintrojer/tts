@@ -1,6 +1,4 @@
-#!/Users/martintrojer/hacking/tts/venv/bin/python
-
-# kokoro>=0.3.4 soundfile
+#!/usr/bin/env -S uv run --script
 
 import subprocess
 import sys
