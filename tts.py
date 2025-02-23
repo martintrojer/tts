@@ -1,5 +1,3 @@
-#!/usr/bin/env uv run --script --python 3.12 --with numpy --with soundfile --with kokoro
-
 import subprocess
 import sys
 from tempfile import NamedTemporaryFile
@@ -20,7 +18,7 @@ def generate_audio(text: str, voice="af_heart", speed=1.25):
         yield audio
 
 
-if __name__ == "__main__":
+def main():
     text = sys.stdin.read().strip()
     all_audio = np.array([])
     for audio in generate_audio(text):
@@ -31,3 +29,7 @@ if __name__ == "__main__":
         subprocess.run(
             ["vlc", "--play-and-exit", tmpfile.name],
         )
+
+
+if __name__ == "__main__":
+    main()

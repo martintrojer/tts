@@ -1,0 +1,3 @@
+## Install
+
+uv tool install .
