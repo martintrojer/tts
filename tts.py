@@ -1,4 +1,4 @@
-#!/usr/bin/env uv run --script --with numpy --with soundfile --with kokoro
+#!/usr/bin/env uv run --script --python 3.12 --with numpy --with soundfile --with kokoro
 
 import subprocess
 import sys
